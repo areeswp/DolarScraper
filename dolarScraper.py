@@ -39,7 +39,6 @@ weekend = ["Saturday", "Sunday"]
 aim = datetime.date(2021, 12, 15)
 dolarCompra = "0"
 dolarVenda = "0"
-continueCheck = "y"
 dataCompra = {}
 dataVenda = {}
 dataExata = "0"
@@ -60,9 +59,22 @@ def inputDate():
     global aimDate
     global userDate
     while not isValid:
-        userDate = input("Digite a data da movimentação (dd/mm/yyyy): ")
+        userDate = input(
+            "Digite a data da movimentação (dd/mm/yyyy), ou 0 para sair do programa: "
+        )
         time.sleep(1)
-        try:  # conferência no formato de dd/mm/yyyy; checking format dd/mm/yyyy
+        if userDate == "0":
+            print(
+                "Lista das datas e respectivos preços de compra do dólar consultados:\n"
+                + str(dataCompra)
+            )
+            print(
+                "\nLista das datas e respectivos preços de venda do dólar consultados: \n"
+                + str(dataVenda)
+            )
+            driver.close()
+            sys.exit("\nFim do programa")
+        try:  # conferência no formato de dd/mm/yyyy e armazenamento nas variáveis; checking format dd/mm/yyyy and store in variables
             aimDate = datetime.datetime.strptime(userDate, "%d/%m/%Y")
             # altera variável userDate em formato de data
             # changes userDate variable into a date format
@@ -112,7 +124,7 @@ def site():
     element.clear()
     # input da data no campo representado pela variável element
     # date input in the field represented by the element variable
-    element.send_keys(aimDate.strftime("%m/%d/%Y"))
+    element.send_keys(aimDate.strftime("%m/%d/%Y")
     # encontra as checkboxes e as pressiona se não estiverem pressionadas
     # find the checkboxes and presses them, if not already pressed
     select1 = driver.find_element(By.XPATH, "//tr[1]/td[1]/input")
@@ -136,6 +148,7 @@ def tryanderror():
     global aimDate
     while dolarCompra == 0:
         site()
+        time.sleep(1)
         try:
             dolarCompra = driver.find_element(
                 By.XPATH,
@@ -158,6 +171,14 @@ def tryanderror():
                     "Não foi possível encontrar uma data válida para o período especificado."
                 )
                 driver.close()
+                print(
+                    "Lista das datas e respectivos preços de compra do dólar consultados:\n"
+                    + str(dataCompra)
+                )
+                print(
+                    "\nLista das datas e respectivos preços de venda do dólar consultados: \n"
+                    + str(dataVenda)
+                )
                 sys.exit("\nFim do programa")
 
 
@@ -177,32 +198,16 @@ def output():
     dataCompra[aimDate.strftime("%d/%m/%Y")] = dolarCompra
     dataVenda[aimDate.strftime("%d/%m/%Y")] = dolarVenda
     print("\nO preço de compra do dólar no dia era de: R$" + str(dolarCompra))
-    print("\nO preço de venda do dólar no dia era de: R$" + str(dolarVenda))
+    print("\nO preço de venda do dólar no dia era de: R$" + str(dolarVenda) + "\n")
 
 
 output()
 
-while continueCheck not in ("n", "no"):
-    continueCheck = input("\nVocê deseja procurar outra data? (y/n): ")
-    if continueCheck in ("y", "yes"):
-        inputDate()
-        if dataExata == "2":
-            adjustDate()
-        conferirData()
-        site()
-        dolarCompra = 0
-        tryanderror()
-        output()
-    elif continueCheck in ("n", "no"):
-        print(
-            "Lista das datas e respectivos preços de compra do dólar consultados:\n"
-            + str(dataCompra)
-        )
-        print(
-            "\nLista das datas e respectivos preços de venda do dólar consultados: \n"
-            + str(dataVenda)
-        )
-        driver.close()
-        sys.exit("\nFim do programa")
-    else:
-        print("Por favor responda com y ou n")
+while userDate != "0":
+    inputDate()
+    if dataExata == "2":
+        adjustDate()
+    conferirData()
+    dolarCompra = "0"
+    tryanderror()
+    output()
