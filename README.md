@@ -35,6 +35,8 @@ It has two functions:
   2. Returns dollar exchange rate to the last business day in the first 15-days (fortnight) of the month before the specified date.
 
 Please note that the program allows multiple price inputs, but it is not recommended to make a big list, in order to avoid ocasional problems in the site that might crash the code and result in the loss of values before final print.
+
+[Link for the code](dolarScraper.py)
 ## Precondition
 It is necessary to install two libraries for Python for proper functioning of the program, those are:
   1. selenium
