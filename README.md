@@ -5,7 +5,9 @@ Possui duas funções:
   1. Retorna os valores do dólar (compra e venda) para a data específica recebida pelo usuário, ou o primeiro dia útil anterior a data.
   2. Retorna os valores do dólar (compra e venda) para o último dia útil da primeira quinzena do mês anterior à data informada.
 
-Nota-se que o programa possibilita a coleta de mais de um preço, porém não é recomendado fazer uma lista muito grande, para evitar problemas ocasionais no site que possam crashar o código e resultar na perda dos valores antes da impressão final.
+Nota-se que o programa possibilita a coleta de mais de um preço, porém não é recomendado fazer uma lista muito grande, para evitar problemas não recorrentes no site que possam crashar o código e resultar na perda dos valores antes da impressão final.
+
+Também é recomendado realizar apenas as ações no terminal, e não interagir com o webdriver aberto.
 
 [Link para o código](dolarScraper.py)
 ## Pré Requisitos
@@ -54,4 +56,6 @@ After executing the code:
      - y takes the user to a new date input
      - n kills the program and prints the dictionaries with their stored data.
 
-Once again, it it recommended not to store too many dates, to avoid possible errors that result in the loss of stored data.
+Once again, it it recommended not to store too many dates, to avoid non-recurring errors that may result in the loss of stored data.
+
+It is also recommended to only realize actions in the terminal, and to not interact with the webdriver.
