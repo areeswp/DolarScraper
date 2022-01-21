@@ -11,9 +11,9 @@ Nota-se que o programa possibilita a coleta de mais de um preço, porém não é
 ## Pré Requisitos
 É necessário instalar duas libs do python para o devido funcionamento do programa, essas são:
   1. selenium
-     -(Utilizado para o funcionamento da raspagem dos dados)
+     - (Utilizado para o funcionamento da raspagem dos dados)
   2. webdriver-manager
-     -(Auxílio ao selenium)
+     - (Auxílio ao selenium)
      
 Para ajuda nesse sentido, recomendo esse [link](https://computadorcomwindows.com/2018/01/19/tutorial-como-instalar-uma-biblioteca-python-no-computador/).
 Se o usuário ainda não possuir o python, sugiro esse [vídeo](https://www.youtube.com/watch?v=-RuY-rM-B4M).
@@ -23,8 +23,8 @@ Após a execução do código:
   2. Próximo input é a data desejada pelo usuário
   3. O retorno já é apresentado no terminal, porém também é armazenado em dois dicionários, um para dólar compra e outro para dólar venda
   4. Escolha do usuário:
-     -y leva o usuário a mais um input de data
-     -n encerra o programa, apresentando os dicionários com os dados armazenados.
+     - y leva o usuário a mais um input de data
+     - n encerra o programa, apresentando os dicionários com os dados armazenados.
 
 Novamente aqui se recomenda não fazer uma lista muito grande, para evitar possíveis erros no site que resultem na perda dos dados armazenados.
 # DollarScraper EN-US
@@ -40,9 +40,9 @@ Please note that the program allows multiple price inputs, but it is not recomme
 ## Precondition
 It is necessary to install two libraries for Python for proper functioning of the program, those are:
   1. selenium
-     -(Used for web scraping)
+     - (Used for web scraping)
   2. wedriver-manager
-     -(Auxiliar for selenium)
+     - (Assistant to selenium)
 
 If you need help in this sense, I recommend this [link](https://packaging.python.org/en/latest/tutorials/installing-packages/).
 ## Use
@@ -51,7 +51,7 @@ After executing the code:
   2. The next input is the user's date
   3. The return is already presented in the terminal, but it is also stored in two dictionaries.
   4. User choice:
-     -y takes the user to a new date input
-     -n kills the program and prints the dictionaries with their stored data.
+     - y takes the user to a new date input
+     - n kills the program and prints the dictionaries with their stored data.
 
 Once again, it it recommended not to store too many dates, to avoid possible errors that result in the loss of stored data.
