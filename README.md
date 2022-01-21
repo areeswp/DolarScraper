@@ -12,7 +12,7 @@ Nota-se que o programa possibilita a coleta de mais de um preço, porém não é
 É necessário instalar duas libs do python para o devido funcionamento do programa, essas são:
   1. selenium
      -(Utilizado para o funcionamento da raspagem dos dados)
-  2.webdriver-manager
+  2. webdriver-manager
      -(Auxílio ao selenium)
      
 Para ajuda nesse sentido, recomendo esse [link](https://computadorcomwindows.com/2018/01/19/tutorial-como-instalar-uma-biblioteca-python-no-computador/).
