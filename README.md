@@ -6,6 +6,8 @@ Possui duas funções:
   2. Retorna os valores do dólar (compra e venda) para o último dia útil da primeira quinzena do mês anterior à data informada.
 
 Nota-se que o programa possibilita a coleta de mais de um preço, porém não é recomendado fazer uma lista muito grande, para evitar problemas ocasionais no site que possam crashar o código e resultar na perda dos valores antes da impressão final.
+
+[Link para o código](dolarScraper.py)
 ## Pré Requisitos
 É necessário instalar duas libs do python para o devido funcionamento do programa, essas são:
   1. selenium
