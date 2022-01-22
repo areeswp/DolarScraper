@@ -146,7 +146,7 @@ def tryanderror():
     global dolarCompra
     global dolarVenda
     global aimDate
-    while dolarCompra == 0:
+    while dolarCompra == "0":
         site()
         time.sleep(1)
         try:
@@ -202,7 +202,8 @@ def output():
 
 
 output()
-
+# repetição para inserir mais datas
+# loop to get more dates
 while userDate != "0":
     inputDate()
     if dataExata == "2":
